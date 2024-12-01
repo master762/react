@@ -352,6 +352,10 @@ a {
     width: fit-content;
 }
 
+.icons img {
+    padding-right: 16px;
+}
+
 .cart {
     margin-bottom: 80px;
 }

@@ -1,7 +1,30 @@
-import React from 'react';
-import styles from './styles/Main.module.css'; // Подключение CSS модуля
+import React, { useState } from 'react';
+import styles from './styles/Main.module.css';
 
 function Main() {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+
+    const handleDiscountClick = () => {
+        if (!name || !phone || !email) {
+            alert("Пожалуйста, заполните все поля!");
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Пожалуйста, введите действительный адрес электронной почты!");
+            return;
+        }
+
+        alert(`Спасибо, ${name}!
+Ваш код скидки будет отправлен на ${email}.`);
+        setName("");
+        setPhone("");
+        setEmail("");
+    };
+
     return (
         <main>
             {/* картинка, текст, кнопка */}
@@ -46,7 +69,7 @@ function Main() {
                     </div>
                 </div>
             </section>
-            {/* реклама */}
+            {/* реклама с функционалом */}
             <section>
                 <div className={`${styles.addBunner} ${styles.container}`}>
                     <p>5% off on the first order</p>
@@ -59,6 +82,8 @@ function Main() {
                                 id="name"
                                 name="name"
                                 placeholder="Name"
+                                value={name} // Привязываем значение к состоянию
+                                onChange={(e) => setName(e.target.value)} // Обновляем состояние
                             />
                             <input
                                 className={styles.styleInputAds}
@@ -66,6 +91,8 @@ function Main() {
                                 id="phone"
                                 name="phone"
                                 placeholder="Phone number"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
                             />
                             <input
                                 className={styles.styleInputAds}
@@ -73,8 +100,10 @@ function Main() {
                                 id="email"
                                 name="email"
                                 placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button>Get a discount</button>
+                            <button onClick={handleDiscountClick}>Get a discount</button>
                         </div>
                     </div>
                 </div>
