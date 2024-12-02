@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/src/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    bottom: 0;
+    font-family: 'Montserrat-VariableFont_wght', sans-serif;
+
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.defultText {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.textChapter {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.leftContact p:first-child {
+    width: fit-content;
+}
+
+.contacts p:first-child {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(139, 139, 139, 1);
+    padding: 32px 0 0 32px;
+    width: fit-content;
+}
+
+
+.infoTxt {
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+    padding: 16px 0 0 32px;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+.contacts {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.banner {
+    width: 548px;
+    height: 194px;
+    background-color: rgba(241, 243, 244, 1);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.bigBanner {
+    width: 780px;
+    height: 194px;
+    background-color: rgba(241, 243, 244, 1);
+    border-radius: 12px;
+    transition: 0.5s;
+}
+
+.icons {
+    padding: 16px 0 0 32px;
+    width: fit-content;
+}
+
+.icons img {
+    padding-right: 16px;
+}
+
+.cart {
+    margin-bottom: 80px;
+}
+
+.cart iframe {
+    width: 100%;
+
+}
+
+.banner:hover,
+.bigBanner:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}

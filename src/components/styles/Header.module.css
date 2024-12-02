@@ -4,12 +4,36 @@
 }
 
 body {
+    margin: 0;
+    bottom: 0;
     font-family: 'Montserrat-VariableFont_wght', sans-serif;
+
 }
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
 
 .container {
     max-width: 1360px;
     margin: 0 auto;
+}
+
+.textChapter {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.defultText {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .home {

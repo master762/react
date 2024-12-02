@@ -1,14 +1,25 @@
-import './App.css';
+import React from 'react';
 import Header from './components/Header';
-import Main from './components/Main';
+import Caregory from './components/Category';
+import Bottomheader from './components/Bottomheader'
+import Ads from './components/Ads'
+import Sale from './components/Sale';
+import Footer from './components/Footer';
+
+
+
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-      <Main />
-    </div>
+      <Bottomheader />
+      <Caregory />
+      <Ads />
+      <Sale />
+      <Footer />
+
+    </>
   );
 }
 
 export default App;
-

@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/src/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    bottom: 0;
+    font-family: 'Montserrat-VariableFont_wght', sans-serif;
+
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.defultText {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.textChapter {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.addBunner {
+    background: linear-gradient(261.47deg, #0B710B 32.63%, #339933 98.96%);
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBunner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adsFlex {
+    display: flex;
+    margin-top: 24px;
+}
+
+.adsInput {
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 328px;
+}
+
+.styleInputAds {
+    width: 484px;
+    height: 58px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: transparent;
+    color: white;
+    padding-left: 32px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.styleInputAds::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+.adsInput button {
+    width: 516px;
+    padding: 0;
+    height: 58px;
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.addBunner p:first-child {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    padding-top: 32px;
+}
+
+.styleInputAds:focus {
+    border-color: #007bff;
+    background-color: rgba(134, 134, 134, 0.1);
+    outline: none;
+}
+
+.adsInput button:active {
+    background-color: #888888;
+}

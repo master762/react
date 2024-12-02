@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/src/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    bottom: 0;
+    font-family: 'Montserrat-VariableFont_wght', sans-serif;
+
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.container {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.defultText {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.textChapter {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.categoriesTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.textChapter {
+    color: black;
+    font-size: 64px;
+    font-weight: 700;
+}
+
+.categoriesLine {
+    width: 120px;
+    height: 4px;
+    background-color: #0b710b;
+    margin: 12px 0;
+}
+
+.categoriesNav {
+    background-color: transparent;
+    border: 2px solid #0b710b;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0b710b;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.productCard {
+    transition: 0.5s;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.productCard:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.discountBadge {
+    position: absolute;
+    top: 16px;
+    left: 255px;
+    background-color: rgba(51, 153, 51, 1);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.productName {
+    margin: 0;
+}
+
+.productPrices {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+}
+
+.currentPrice p {
+    transition: 0.5s;
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.5s;
+    color: rgba(139, 139, 139, 1);
+}
+
+.oldPrice p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #888;
+    text-decoration: line-through;
+}
+
+.productName p {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.categories-nav:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+    color: #000;
+}
+
+.categories-nav:active {
+    background-color: #d6d6d6;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.95);
+}
+
+.categories-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.categories-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: rgba(221, 221, 221, 1);
+    margin-left: 32px;
+}
+
+.categories-nav {
+    background-color: transparent;
+    border: 1px solid rgba(221, 221, 221, 1);
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.productCard:hover {
+    transform: scale(1.03);
+}
+
+.productCard:hover .currentPrice p {
+    transform: scale(1.03);
+    color: red;
+}
+
+.productCard:hover .oldPrice {
+    opacity: 0.3;
+}
+
+.productCard:hover .discountBadge {
+    transform: scale(1.2);
+}
