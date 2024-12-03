@@ -102,3 +102,9 @@ a {
 .centerTxt:hover {
     transform: scale(1.025);
 }
+
+
+.categoryImage {
+    width: 248px;
+    height: 350px;
+}

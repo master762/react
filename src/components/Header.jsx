@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './styles/Header.module.css'; // Подключение CSS модуля
+import styles from './styles/Header.module.css';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
@@ -9,25 +10,23 @@ function Header() {
                 <nav>
                     <ul className={styles.navList}>
                         <li>
-                            <a className={styles.styled} href="#">Main Page</a>
+                            <Link className={styles.styled} to="/">Main Page</Link>
                         </li>
                         <li>
-                            <a className={styles.styled} href="#">Categories</a>
+                            <Link className={styles.styled} to="/categories">Categories</Link>
                         </li>
                         <li>
-                            <a className={styles.styled} href="#">All products</a>
+                            <Link className={styles.styled} to="/all-products">All Products</Link>
                         </li>
                         <li>
-                            <a className={styles.styled} href="#">All sales</a>
+                            <Link className={styles.styled} to="/all-sales">All Sales</Link>
                         </li>
                     </ul>
                 </nav>
-                <img src="/img/icon.jpg" alt="Icon" />
+                <Link to="/basket"> <img src="/img/icon.jpg" alt="Icon" /> </Link>
             </div>
         </header>
     );
-};
-
-
+}
 
 export default Header;
