@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Импортируем Link
+import { Link } from 'react-router-dom';
 import styles from './styles/Category.module.css';
 
 function Caregory({ images, isCategoriesPage, hideCategoryControls }) {
@@ -24,12 +24,25 @@ function Caregory({ images, isCategoriesPage, hideCategoryControls }) {
             <div className={`${styles['categories-img']} ${styles.container}`}>
                 {images.map((image, index) => (
                     <div className={styles.centerTxt} key={index}>
-                        <img
-                            src={image.src}
-                            alt={image.alt}
-                            className={isCategoriesPage ? styles.categoryImage : ''} // Применяем стиль только на странице категорий
-                        />
-                        <p className={styles.defultText}>{image.text}</p>
+                        {image.link ? (
+                            <Link to={image.link}>
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className={isCategoriesPage ? styles.categoryImage : ''}
+                                />
+                                <p className={styles.defultText}>{image.text}</p>
+                            </Link>
+                        ) : (
+                            <>
+                                <img
+                                    src={image.src}
+                                    alt={image.alt}
+                                    className={isCategoriesPage ? styles.categoryImage : ''}
+                                />
+                                <p className={styles.defultText}>{image.text}</p>
+                            </>
+                        )}
                     </div>
                 ))}
             </div>
