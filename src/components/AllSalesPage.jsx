@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './styles/Sale.module.css';
+import { Link } from 'react-router-dom';
 
 function AllSalesPage() {
     const toolsAndEquipment = [
         {
+            id: 1, // Добавлено поле id
             image: '/img/sale4.png',
             name: 'Secateurs',
             currentPrice: 199,
@@ -11,6 +13,7 @@ function AllSalesPage() {
             discount: 17,
         },
         {
+            id: 2,
             image: '/img/collection.png',
             name: 'Collection for berries (plastic)',
             currentPrice: 26,
@@ -18,14 +21,15 @@ function AllSalesPage() {
             discount: 26,
         },
         {
+            id: 3,
             image: '/img/gloves.png',
             name: 'Wrench set',
             currentPrice: 9,
             oldPrice: 14,
             discount: 36,
         },
-
         {
+            id: 8,
             image: '/img/thermometer.png',
             name: 'Souvenir thermometer',
             currentPrice: 98,
@@ -33,6 +37,7 @@ function AllSalesPage() {
             discount: 18,
         },
         {
+            id: 9,
             image: '/img/sale1.png',
             name: 'Decorative forged bridge',
             currentPrice: 500,
@@ -40,6 +45,7 @@ function AllSalesPage() {
             discount: 50,
         },
         {
+            id: 10,
             image: '/img/sale2.png',
             name: 'Flower basket',
             currentPrice: 100,
@@ -47,6 +53,7 @@ function AllSalesPage() {
             discount: 34,
         },
         {
+            id: 11,
             image: '/img/sale3.png',
             name: 'Aquarium lock',
             currentPrice: 150,
@@ -57,12 +64,10 @@ function AllSalesPage() {
 
     return (
         <section>
-
             <div className={`${styles.productGrid} ${styles.container}`}>
                 {/* Рендерим карточки с продуктами */}
-                {toolsAndEquipment.map((product, index) => (
-                    <div className={styles.productCard} key={index}>
-
+                {toolsAndEquipment.map((product) => (
+                    <div className={styles.productCard} key={product.id}>
                         {product.discount && (
                             <div className={styles.discountBadge}>
                                 <p>{`-${product.discount}%`}</p>
@@ -84,11 +89,12 @@ function AllSalesPage() {
                                 <span className={styles.oldPrice}>
                                     <p>${product.oldPrice}</p>
                                 </span>
-
                             )}
                         </div>
-                        <button className={styles.addToCartButton}>Add to cart</button>
-
+                        {/* Ссылка на компонент Product */}
+                        <Link to={`/product/${product.id}`} className={styles.addToCartButton}>
+                            Add to card
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -97,4 +103,3 @@ function AllSalesPage() {
 }
 
 export default AllSalesPage;
-

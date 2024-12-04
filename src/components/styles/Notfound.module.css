@@ -1,0 +1,44 @@
+.logo {
+    margin: 0 auto;
+    width: 691px;
+    height: 530px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.flex {
+    display: flex;
+    margin-bottom: 44px;
+}
+
+.four {
+    color: rgba(51, 153, 51, 1);
+    font-size: 310px;
+    width: fit-content;
+}
+
+.text {
+    color: rgba(139, 139, 139, 1);
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
+.greenBtn {
+    background-color: rgba(51, 153, 51, 1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 56px;
+    width: 218px;
+    height: 58px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+    margin-left: 32%;
+
+}

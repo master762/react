@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './styles/Header.module.css';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function Header({ cartCount }) {
     return (
         <header className={styles.container}>
             <div className={styles.home}>
-                <img src="/img/logo.jpg" alt="Logo" />
+                <Link to="/">
+                    <img src="/img/logo.jpg" alt="Logo" />
+                </Link>
                 <nav>
                     <ul className={styles.navList}>
                         <li>
@@ -23,7 +25,14 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
-                <Link to="/basket"> <img src="/img/icon.jpg" alt="Icon" /> </Link>
+                <div className={styles.cartContainer}>
+                    <Link to="/basket">
+                        <img src="/img/icon.jpg" alt="Cart Icon" />
+                    </Link>
+                    {cartCount > 0 && (
+                        <span className={styles.cartCount}>{cartCount}</span>
+                    )}
+                </div>
             </div>
         </header>
     );

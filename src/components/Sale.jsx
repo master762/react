@@ -33,7 +33,7 @@ function Sale() {
                             <p>$1000</p>
                         </span>
                     </div>
-                    <button className={styles.addToCartButton}>Add to cart</button>
+
                 </div>
                 <div className={styles.productCard}>
                     <div className={styles.discountBadge}>
@@ -51,7 +51,7 @@ function Sale() {
                             <p>$150</p>
                         </span>
                     </div>
-                    <button className={styles.addToCartButton}>Add to cart</button>
+
                 </div>
 
                 <div className={styles.productCard}>
@@ -70,7 +70,7 @@ function Sale() {
                             <p>$200</p>
                         </span>
                     </div>
-                    <button className={styles.addToCartButton}>Add to cart</button>
+
                 </div>
 
                 <div className={styles.productCard}>
@@ -89,7 +89,7 @@ function Sale() {
                             <p>$240</p>
                         </span>
                     </div>
-                    <button className={styles.addToCartButton}>Add to cart</button>
+
                 </div>
 
             </div>

@@ -1,9 +1,11 @@
 import React from 'react';
 import styles from './styles/Sale.module.css';
+import { Link } from 'react-router-dom';
 
 function ToolsAndEquipmentPage() {
     const toolsAndEquipment = [
         {
+            id: 1, // Добавлено поле id
             image: '/img/sale4.png',
             name: 'Secateurs',
             currentPrice: 199,
@@ -11,6 +13,7 @@ function ToolsAndEquipmentPage() {
             discount: 17,
         },
         {
+            id: 2,
             image: '/img/collection.png',
             name: 'Collection for berries (plastic)',
             currentPrice: 26,
@@ -18,6 +21,7 @@ function ToolsAndEquipmentPage() {
             discount: 26,
         },
         {
+            id: 3,
             image: '/img/gloves.png',
             name: 'Wrench set',
             currentPrice: 9,
@@ -25,6 +29,7 @@ function ToolsAndEquipmentPage() {
             discount: 36,
         },
         {
+            id: 4,
             image: '/img/shaped.png',
             name: 'Sickle-shaped hacksaw',
             currentPrice: 155,
@@ -32,6 +37,7 @@ function ToolsAndEquipmentPage() {
             discount: null,
         },
         {
+            id: 5,
             image: '/img/shovel.png',
             name: 'Bayonet shovel',
             currentPrice: 180,
@@ -39,6 +45,7 @@ function ToolsAndEquipmentPage() {
             discount: null,
         },
         {
+            id: 6,
             image: '/img/pitchfork.png',
             name: 'Garden pitchfork',
             currentPrice: 179,
@@ -46,6 +53,7 @@ function ToolsAndEquipmentPage() {
             discount: null,
         },
         {
+            id: 7,
             image: '/img/barbell.png',
             name: 'Barbell',
             currentPrice: 12,
@@ -53,6 +61,7 @@ function ToolsAndEquipmentPage() {
             discount: null,
         },
         {
+            id: 8,
             image: '/img/thermometer.png',
             name: 'Souvenir thermometer',
             currentPrice: 98,
@@ -63,12 +72,10 @@ function ToolsAndEquipmentPage() {
 
     return (
         <section>
-
             <div className={`${styles.productGrid} ${styles.container}`}>
                 {/* Рендерим карточки с продуктами */}
-                {toolsAndEquipment.map((product, index) => (
-                    <div className={styles.productCard} key={index}>
-
+                {toolsAndEquipment.map((product) => (
+                    <div className={styles.productCard} key={product.id}>
                         {product.discount && (
                             <div className={styles.discountBadge}>
                                 <p>{`-${product.discount}%`}</p>
@@ -90,11 +97,12 @@ function ToolsAndEquipmentPage() {
                                 <span className={styles.oldPrice}>
                                     <p>${product.oldPrice}</p>
                                 </span>
-
                             )}
                         </div>
-                        <button className={styles.addToCartButton}>Add to cart</button>
-
+                        {/* Ссылка на компонент Product */}
+                        <Link to={`/product/${product.id}`} className={styles.addToCartButton}>
+                            Add to card
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -103,4 +111,3 @@ function ToolsAndEquipmentPage() {
 }
 
 export default ToolsAndEquipmentPage;
-

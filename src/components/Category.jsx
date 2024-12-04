@@ -8,7 +8,7 @@ function Caregory({ images, isCategoriesPage, hideCategoryControls }) {
             <div className={`${styles['categories-top']} ${styles.container}`}>
                 <p className={styles.textChapter}>Categories</p>
 
-                {/* Условие для скрытия кнопки и линии на странице категорий */}
+
                 {!hideCategoryControls && (
                     <>
                         <div className={styles['categories-line']}></div>

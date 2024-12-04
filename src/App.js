@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './global.css';
 import Header from './components/Header';
@@ -10,10 +10,17 @@ import Bottomheader from './components/Bottomheader';
 import BasketPage from './components/BasketPage';
 import ToolsAndEquipmentPage from './components/ToolsAndEquipmentPage';
 import Filter from './components/Filter';
-import AllProductsPage from './components/AllProductsPage'
-import AllSalesPage from './components/AllSalesPage'
+import AllProductsPage from './components/AllProductsPage';
+import AllSalesPage from './components/AllSalesPage';
+import Product from './components/Product';
+import Notfound from './components/Notfound';
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+
+  const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+
   const mainPageImages = [
     { src: '/img/categories 1.jpg', alt: 'Fertilizer', text: 'Fertilizer' },
     { src: '/img/categories 2.jpg', alt: 'Protective products', text: 'Protective products and septic tanks' },
@@ -28,7 +35,7 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Header cartCount={cartCount} />
       <Routes>
         <Route
           path="/"
@@ -55,7 +62,6 @@ function App() {
           path="/tools-and-equipment"
           element={
             <>
-
               <div className='container'>
                 <p className='textChapter'>Tools and Equipment</p>
               </div>
@@ -64,27 +70,42 @@ function App() {
             </>
           }
         />
-        <Route path="/all-products" element={
-          <>
-
-            <div className='container'>
-              <p className='textChapter'>All products</p>
-            </div>
-            <Filter />
-            <AllProductsPage />
-          </>
-        } />
-        <Route path="/all-sales" element={
-          <>
-
-            <div className='container'>
-              <p className='textChapter'>Discounted items</p>
-            </div>
-            <Filter />
-            <AllSalesPage />
-          </>
-        } />
-        <Route path="/basket" element={<BasketPage />} />
+        <Route
+          path="/all-products"
+          element={
+            <>
+              <div className='container'>
+                <p className='textChapter'>All products</p>
+              </div>
+              <Filter />
+              <AllProductsPage />
+            </>
+          }
+        />
+        <Route
+          path="/all-sales"
+          element={
+            <>
+              <div className='container'>
+                <p className='textChapter'>Discounted items</p>
+              </div>
+              <Filter />
+              <AllSalesPage />
+            </>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={<Product cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path="/basket"
+          element={<BasketPage cart={cart} setCart={setCart} />}
+        />
+        <Route
+          path="/*"
+          element={<Notfound />}
+        />
       </Routes>
       <Footer />
     </Router>

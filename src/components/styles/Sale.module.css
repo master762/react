@@ -194,10 +194,8 @@ a {
 }
 
 .addToCartButton {
-    width: 284px;
-    height: 58px;
+    width: 70%;
     position: absolute;
-
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(51, 153, 51, 1);

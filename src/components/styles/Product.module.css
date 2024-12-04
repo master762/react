@@ -1,0 +1,118 @@
+.productPage {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.productContainer {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+.imageContainer {
+    flex: 1;
+}
+
+.productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.detailsContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.productName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.currentPrice {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.oldPrice {
+    font-size: 20px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.discountBadge {
+    font-size: 16px;
+    color: #fff;
+    background-color: green;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 38px;
+}
+
+.quantityButton {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantityValue {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.addToCartButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 316px;
+    height: 58px;
+    margin-left: 32px;
+}
+
+.addToCartButton:hover {
+    background-color: darkgreen;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.description h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
