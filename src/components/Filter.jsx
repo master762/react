@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles/Filter.module.css';
-function Filter() {
-    return (
 
+function Filter() {
+    const navigate = useNavigate();
+    const [isDiscountedChecked, setIsDiscountedChecked] = useState(false);
+
+
+    const handleDiscountedChange = (event) => {
+        setIsDiscountedChecked(event.target.checked);
+        if (event.target.checked) {
+            navigate('/all-sales');
+        } else {
+            navigate(-1);
+        }
+    };
+
+    return (
         <div className='container'>
             <div className={`${styles['filterContainer']} ${styles.container}`} >
                 <div className={styles.filterSection}>
@@ -15,7 +29,12 @@ function Filter() {
                 </div>
                 <div className={styles.filterSection}>
                     <label htmlFor="discounted-items">Discounted items</label>
-                    <input type="checkbox" id="discounted-items" />
+                    <input
+                        type="checkbox"
+                        id="discounted-items"
+                        checked={isDiscountedChecked}
+                        onChange={handleDiscountedChange}
+                    />
                 </div>
                 <div className={styles.filterSection}>
                     <label htmlFor="sort-by">Sorted by</label>
@@ -30,7 +49,5 @@ function Filter() {
         </div>
     );
 };
-
-
 
 export default Filter;
